@@ -1,0 +1,7 @@
+1 UserDetailService : Co quyen truy cap vao password cua user
+
+tao 1 userDetail Service
+@Bean
+public UserDetailsService userDetailsService() {
+    return new MyDatabaseUserDetailsService(); // (1)
+}

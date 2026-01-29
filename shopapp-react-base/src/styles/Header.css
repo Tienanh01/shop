@@ -1,0 +1,140 @@
+/* Header.css */
+
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #eaeaea; /* Đường gạch mờ bên dưới header */
+    padding: 15px 0;
+    position: sticky; /* Giúp header dính lên trên cùng khi cuộn (tùy chọn) */
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px; /* Đồng bộ độ rộng với TopBar cũ */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- 1. Logo Style --- */
+.logo a {
+    font-family: 'Segoe UI', sans-serif; /* Hoặc font dự án của bạn */
+    font-size: 24px;
+    font-weight: 700;
+    color: #0f172a; /* Màu đen xanh đậm */
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+/* --- 2. Search Box Style --- */
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Màu viền xám nhạt */
+    border-radius: 50px; /* Bo tròn hình viên thuốc */
+    padding: 4px;
+    padding-left: 16px;
+    width: 100%;
+    max-width: 600px; /* Độ dài tối đa của thanh tìm kiếm */
+    transition: box-shadow 0.2s;
+}
+
+/* Hiệu ứng khi click vào ô tìm kiếm */
+.search-box:focus-within {
+    border-color: #5865f2; /* Đổi màu viền khi nhập liệu */
+    box-shadow: 0 0 0 3px rgba(88, 101, 242, 0.1);
+}
+
+.search-icon-left {
+    color: #94a3b8; /* Màu icon kính lúp xám */
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex-grow: 1; /* Chiếm hết khoảng trống còn lại */
+    font-size: 15px;
+    color: #334155;
+    background: transparent;
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+}
+
+.search-btn {
+    background-color: #5865f2; /* Màu xanh tím giống nút Shop Now */
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%; /* Hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-left: 5px;
+}
+
+.search-btn:hover {
+    background-color: #4752c4;
+}
+
+/* --- 3. Actions Style --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Khoảng cách giữa Cart và Sign in */
+}
+
+.cart-action {
+    cursor: pointer;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.cart-icon {
+    font-size: 22px;
+}
+
+.cart-action:hover {
+    color: #5865f2;
+}
+
+.sign-in-btn {
+    text-decoration: none;
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.sign-in-btn:hover {
+    color: #5865f2;
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    .header-container {
+        flex-wrap: wrap; /* Cho phép xuống dòng */
+        gap: 15px;
+    }
+
+    .search-box {
+        order: 3; /* Đẩy thanh tìm kiếm xuống dưới cùng */
+        max-width: 100%; /* Full màn hình */
+        margin-top: 10px;
+    }
+
+    .logo {
+        flex-grow: 1;
+    }
+}

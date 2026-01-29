@@ -1,0 +1,78 @@
+/* TopBar.css */
+
+.top-bar {
+  background-color: #211f52;
+  color: #ffffff;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.top-bar-container {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Button Styles */
+.btn-shop {
+  background-color: #5865f2;
+  color: white;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-shop:hover {
+  background-color: #4752c4;
+}
+
+.icon-small {
+  font-size: 12px;
+}
+
+/* Info List Styles */
+.info-list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #eef0f3;
+  white-space: nowrap; /* Ngăn xuống dòng */
+}
+
+.icon {
+  font-size: 14px;
+}
+
+/* RESPONSIVE: Cực kỳ quan trọng cho TopBar */
+@media (max-width: 992px) {
+  /* Ẩn bớt text, chỉ hiện icon hoặc ẩn hẳn các mục phụ */
+  .info-item:nth-child(2) { display: none; } /* Ẩn Gift Card trên tablet */
+}
+
+@media (max-width: 768px) {
+  .top-bar-container {
+    justify-content: center; /* Căn giữa nút Shop Now */
+  }
+  .info-list {
+    display: none; /* Ẩn toàn bộ text bên phải trên mobile */
+  }
+}
