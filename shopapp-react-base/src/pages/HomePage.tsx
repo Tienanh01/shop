@@ -14,6 +14,7 @@ import {
   Tag,
   Flame,
 } from "lucide-react";
+import Footer from "../components/layout/Footer";
 
 type NavItem = { label: string; href?: string; megaKey?: string };
 type MegaGroup = { title: string; items: { label: string; href?: string }[] };
@@ -600,11 +601,12 @@ export default function HomePage102() {
       </main>
 
       {/* FOOTER */}
-      <footer className="border-t border-slate-200 bg-white">
+      {/* <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-4 py-10 text-sm text-slate-600">
           © {new Date().getFullYear()} — Demo UI theo layout Điện Thoại 102 (không dùng asset gốc).
         </div>
-      </footer>
+      </footer> */} 
+
 
       {/* Tailwind animation helper (you can move to global css) */}
       <style>{`

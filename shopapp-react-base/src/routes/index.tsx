@@ -5,6 +5,7 @@ import HomePage from '../pages/HomePage'
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
 import { useAuth } from '../context/AuthContext'
+import Home from '../pages/home/Home'
 
 const PrivateRoute = ({ children }: { children: JSX.Element }) => {
   const { isAuthenticated } = useAuth()
@@ -18,7 +19,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
-        <Route index element={<HomePage />} />
+        <Route index element={<Home />} />
         <Route
           path="/profile"
           element={
