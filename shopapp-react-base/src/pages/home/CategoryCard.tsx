@@ -2,9 +2,14 @@ import { Card, Typography, Space } from "antd";
 
 const { Title, Text } = Typography;
 
-  interface CategoryItem {
+interface CategoryPreviewItem {
+  name: string;
+  imageUrl: string;
+}
+
+interface CategoryItem {
   title: string;
-  items: string[];
+  items: CategoryPreviewItem[];
 }
 
 export default function CategoryCard({ item }: { item: CategoryItem }) {
@@ -17,7 +22,6 @@ export default function CategoryCard({ item }: { item: CategoryItem }) {
       }}
       bodyStyle={{ padding: 16 }}
       onClick={() => {
-        // sau này navigate sang category
         console.log("Go to category:", item.title);
       }}
     >
@@ -29,7 +33,7 @@ export default function CategoryCard({ item }: { item: CategoryItem }) {
 
         {/* Items preview */}
         <Space size="large">
-          {item.items.map((name, idx) => (
+          {item.items.map((item, idx) => (
             <div key={idx} style={{ textAlign: "center" }}>
               <div
                 style={{
@@ -41,14 +45,22 @@ export default function CategoryCard({ item }: { item: CategoryItem }) {
                   alignItems: "center",
                   justifyContent: "center",
                   marginBottom: 4,
+                  overflow: "hidden",
                 }}
               >
-                {/* placeholder image */}
-                <Text type="secondary">{name[0]}</Text>
+                <img
+                  src={`http://10.2.22.63:8188${item.imageUrl}`}
+                  alt={item.name}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
               </div>
 
               <Text style={{ fontSize: 12 }} type="secondary">
-                {name}
+                {item.name}
               </Text>
             </div>
           ))}
