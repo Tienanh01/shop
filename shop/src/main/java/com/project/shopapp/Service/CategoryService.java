@@ -6,6 +6,8 @@ import com.project.shopapp.models.Category;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,8 +23,12 @@ public class CategoryService implements ICategoryService{
     private  CategoryRepository categoryRepository;
 
     @Override
-    public Category createCategory(String name , MultipartFile file) throws IOException {
+    public ResponseEntity<?> createCategory(String name , MultipartFile file , Integer group) throws IOException {
 
+        // check exit category
+                if (categoryRepository.existsByName(name)) {
+                    return ResponseEntity.internalServerError().body("Category already exists");
+                }
                 // 2) lưu file
                 String filename = System.currentTimeMillis() + "_" + file.getOriginalFilename();
         Path uploadDir = Paths.get("uploads/categories");
@@ -34,10 +40,11 @@ public class CategoryService implements ICategoryService{
         // 3) tạo category
         Category category = Category.builder()
                 .name(name)
+                .group(group)
                 .imageUrl("/uploads/categories/" + filename)
                 .build();
 
-        return categoryRepository.save(category);
+        return ResponseEntity.ok().body(categoryRepository.save(category));
     }
 
 
