@@ -10,7 +10,7 @@ export default function HeroBanner() {
         borderRadius: 12,
         overflow: "hidden",
         height: 300,
-        backgroundImage: "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IuYKWLZcswxChZ1aA6nI9z9mrV7iwYAIeQ&s')",
+        backgroundImage: "url('https://startbootstrap.github.io/startbootstrap-agency/assets/img/header-bg.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         position: "relative",

@@ -4,8 +4,8 @@ import CategoryGrid from './CategoryGrid';
 import ProductSection from './ProductSection';
     
 const dummyProducts = [
-  { id: 1, name: "Gaming Headset", price: 59, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IuYKWLZcswxChZ1aA6nI9z9mrV7iwYAIeQ&s", rating: 4 },
-  { id: 2, name: "Mechanical Keyboard", price: 89, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IuYKWLZcswxChZ1aA6nI9z9mrV7iwYAIeQ&s", rating: 5 },
+  { id: 1, name: "Gaming Headset", price: 59, image: "https://anphatcomputer.com/wp-content/uploads/2023/07/1-min.png", rating: 4 },
+  { id: 2, name: "Mechanical Keyboard", price: 89, image: "https://uscom.com.vn/wp-content/uploads/2025/03/iPad-Gen-11-Pink-2.jpg", rating: 5 },
   { id: 3, name: "Wireless Mouse", price: 45, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IuYKWLZcswxChZ1aA6nI9z9mrV7iwYAIeQ&s", rating: 4 },
   { id: 4, name: "Smart Watch", price: 129, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7IuYKWLZcswxChZ1aA6nI9z9mrV7iwYAIeQ&s", rating: 4 },
 ];
