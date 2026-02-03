@@ -23,5 +23,8 @@ public class Category {
     private String name;
     @Column(name = "image_url")
     private String imageUrl;
+    @Column(name = "category_group")
+    private Integer group;
+
 
 }

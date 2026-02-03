@@ -49,10 +49,11 @@ public class CategoryController {
     //Nếu tham số truyền vào là 1 object thì sao ? => Data Transfer Object = Request Object
     public ResponseEntity<?> insertCategory(
             @RequestParam("name") String name,
-            @RequestParam("file") MultipartFile file ) throws IOException {
+            @RequestParam("group") Integer group,
+            @RequestParam("file") MultipartFile file  ) throws IOException {
 
-    Category category = categoryService.createCategory(name, file);
-        return ResponseEntity.ok(category);
+        return categoryService.createCategory(name, file,group);
+
 
     }
 
